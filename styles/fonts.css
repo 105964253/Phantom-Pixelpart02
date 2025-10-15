@@ -1,0 +1,21 @@
+/*
+
+filename: PhantomPixelWebProject
+
+author: G01
+
+created: 21/09/2025
+
+last modified: 22/09/2025
+
+description: custom font for webpages
+
+*/
+
+
+@font-face { /* font sourced from dafont.com - created by Astramat */
+  font-family: 'Pixelade'; /* custom font added for nav and header styling */
+  src: url(fonts/PIXELADE.TTF);
+  font-weight: normal;
+  font-style: normal;
+}
