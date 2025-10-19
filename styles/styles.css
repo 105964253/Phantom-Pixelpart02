@@ -143,9 +143,20 @@ h3 {
 
 /* application page css */
   #applybody {
-    min-width: 800px;
     background:url(Images/backgroundfade.png) repeat-x bottom left; /* image generated with ChatGPT */
     background-size: cover; /* stretch the background image to cover the entire page */
+  }
+
+  #applymain {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  #phantompixeloffice {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   /* form layout start */
@@ -156,6 +167,8 @@ h3 {
       border-radius: 16px;
       padding: 40px;
       box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+      max-width: 900px;
+      margin: 0 auto
     }
 
     #jobreference {
@@ -275,7 +288,9 @@ h3 {
     }
 
     #staddress {
-      padding: 6px 158px;
+      padding: 6px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     #state {

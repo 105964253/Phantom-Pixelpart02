@@ -43,7 +43,7 @@
 <body id="applybody">
     <header>
         <div id="althead"> <!-- alt header with black logo -->
-            <a href="index.html"> <img src = "styles/Images/phantompixellogo_black.png" id = "phantompixellogo" alt = "Phantom Pixel logo" width="125"></a> <!-- image generated with ChatGPT -->
+            <a href="index.html"> <img src = "styles/images/phantompixellogo_black.png" id = "phantompixellogo" alt = "Phantom Pixel logo" width="125"></a> <!-- image generated with ChatGPT -->
             <nav>
                 <a class="altnav" href="index.html" style="font-family: Pixelade; font-size: 18px;">HOME</a> <!-- inline css examples -->
                 <a class="altnav" href="about.html" style="font-family: Pixelade; font-size: 18px;">ABOUT</a>
@@ -54,13 +54,15 @@
     </header>
 
     <main id="applymain">
+        <br>
         <section id="summary"> <!-- short summary above the application form -->
             <div class="sumtext">
                 <h2 style="color: #ff3a95;">Thank you for your interest</h2> <!-- inline css examples -->
                 <hr style="color: #ff3a95;">
                 <p style="color: #f3f3f1;">We greatly appreciate your interest in joining us at <span style="color: #ff3a95;">Phantom Pixel</span>. By applying, you are taking the first step toward becoming part of a team that values <strong>innovation</strong>, <strong>collaboration</strong>, <strong>creativity</strong> &amp; <strong>growth</strong>. To apply, please complete the form below.</p>
             </div>
-            <img src = "styles/Images/phantompixeloffice.png" id = "phantompixeloffice" alt = "Phantom Pixel Office" width="350"> <!-- image generated with ChatGPT -->
+
+            <img src = "styles/images/phantompixeloffice.png" id = "phantompixeloffice" alt = "Phantom Pixel Office" width="350"> <!-- image generated with ChatGPT -->
 
         </section>
 
@@ -72,7 +74,7 @@
 
                 <div id="jobreference">
                     <label for="jobref"><strong>Job Reference Number:  </strong></label>
-                    <input type="text" id="jobref" name="jobref" placeholder="Enter reference number" maxlength="5" pattern="[A-Za-z0-9]{5}" required>
+                    <input type="text" id="jobref" name="jobref" placeholder="Enter reference number" maxlength="5" pattern="^[A-Za-z0-9]{5}$" required>
                 </div>
 
                 <br>
@@ -81,14 +83,14 @@
 
                     <div id="firstname">
                         <label for="firstN">First Name:  </label> <!-- firstN used as id to style the input field seperately to the div --> 
-                        <input type="text" id="firstN" name="firstname" placeholder="Enter your given name" maxlength="20" pattern="[A-Za-z]+" required>
+                        <input type="text" id="firstN" name="firstname" placeholder="Enter your given name" maxlength="20" pattern="^[A-Za-z]+(?:[ '\-][A-Za-z]+)*$" required>
                     </div>
 
                     <br>
                     
                     <div id="lastname">
                         <label for="lastN">Last Name:  </label> <!-- lastN used as id to style the input field seperately to the div -->
-                        <input type="text" id="lastN" name="lastname" placeholder="Enter your family name" maxlength="20" pattern="[A-Za-z]+" required>
+                        <input type="text" id="lastN" name="lastname" placeholder="Enter your family name" maxlength="20" pattern="^[A-Za-z]+(?:[ '\-][A-Za-z]+)*$" required>
                     </div>
 
                     <br>
@@ -157,18 +159,18 @@
 
                     <div id="contactinput"> <!-- bottom flexbox row div for contacts-->
                         <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                        <input type="text" id="hnum" name="hnum" placeholder="Enter your home number" pattern="[0-9+]{8,12}$">
-                        <input type="text" id="pnum" name="pnum" placeholder="Enter your mobile number" pattern="[0-9+]{8,12}$" required>
+                        <input type="text" id="hnum" name="hnum" placeholder="Enter your home number" pattern="^\+?\d{8,12}$"> <!-- optional home phone -->
+                        <input type="text" id="pnum" name="pnum" placeholder="Enter your mobile number" pattern="^\+?\d{8,12}$" required>
                     </div>
                 </div>
 
                 <br>
 
                 <fieldset id="SkillList">
-                    <label class="formtitles">relevant skills</label>
+                    <label class="formtitles">relevant skills*</label>
 
                     <div class="skills">
-                        <input type="checkbox" id="skill1" name="skills[]" value="Skill 1">
+                        <input type="checkbox" id="skill1" name="skills[]" value="Skill 1" required>
                         <label for="skill1"> C++ / C# proficiency (Unity or Unreal)</label>
                     </div>
 
