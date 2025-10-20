@@ -13,10 +13,7 @@
 </head>
 <!-- Content including slogans and all the statistics are generated using gen ai. -->
 <body id="indexbody"> <!-- Gave it a unique id so that styling would not overlap. -->
-    <header id="header01">
-        <div id="logo">
-        <a href="index.html"> <img src = "styles/Images/phantompixellogo.png" id = "phantompixellogo" alt = "phantom pixel logo" width="200" /></a>
-        </div>
+    <?php include 'header.inc'; ?>
      <nav id="header01nav">
         <a href="index.html" style="font-family: Pixelade; font-size: 18px;">HOME</a>
         <a href="about.html" style="font-family: Pixelade; font-size: 18px;">ABOUT</a>

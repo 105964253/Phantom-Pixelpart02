@@ -5,6 +5,4 @@
     <a href="apply.php" style="font-family: Pixelade; font-size: 18px;">APPLY NOW</a>
   </nav>
 
-  <h1 id="companytitle">Phantom Pixel</h1>
-  <h2 id="slogan">Where Every Pixel Tells a Ghost Story.</h2>
 </header>
