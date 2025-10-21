@@ -153,6 +153,10 @@ h3 {
     padding: 0 16px;
   }
 
+  #applyheader {
+  background-color: #16213e;
+  }
+
   #phantompixeloffice {
     max-width: 100%;
     height: auto;
@@ -727,6 +731,11 @@ table.funfacts tbody tr:hover {
 /* jobs page css end */
 
 /* login page css */
+
+#loginbody {
+  background:url(Images/backgroundfade.png) repeat-x bottom left; /* image generated with ChatGPT */
+  background-size: cover; /* stretch the background image to cover the entire page */
+}
 
 #login {
   text-align: center;
