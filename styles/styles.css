@@ -725,3 +725,65 @@ table.funfacts tbody tr:hover {
     background-color: #651AE8;
   }
 /* jobs page css end */
+
+/* login page css */
+
+#login {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 30px;
+  border-radius: 16px;
+}
+
+#loginform {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+#username {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 250px;
+}
+
+#password {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 250px;
+}
+
+input[type="password"] {
+  padding: 6px;
+  border-radius: 7px;
+  border-color: #0a121c;
+  background-color: #dbdbda;
+}
+
+input[type="password"]:focus {
+  border-color: #ff3a95;
+  background-color: white;
+  outline: none; /* remove default blue border that appears */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+#loginform input[type="submit"] {
+  width: 125px;
+  display: flex;
+  flex-direction: center;
+  background-color:#0a121c;
+  color: #ffffff;
+}
+
+#loginform input[type="submit"]:hover {
+  background-color:#ff1493;
+  color:#0a121c;
+}
+/* login page css end */
