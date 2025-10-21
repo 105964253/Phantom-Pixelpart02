@@ -753,11 +753,23 @@ table.funfacts tbody tr:hover {
   width: 250px;
 }
 
+#username label {
+  font-family: Pixelade;
+  color: #651AE8;
+  font-size: 22px;
+}
+
 #password {
   display: flex;
   flex-direction: column;
   gap: 5px;
   width: 250px;
+}
+
+#password label {
+  font-family: Pixelade;
+  color: #651AE8;
+  font-size: 22px;
 }
 
 input[type="password"] {
@@ -785,5 +797,20 @@ input[type="password"]:focus {
 #loginform input[type="submit"]:hover {
   background-color:#ff1493;
   color:#0a121c;
+}
+
+#loginbody {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#loginfooter {
+  margin-top: auto;
+}
+
+#loginheader {
+  background-color: #16213e;
 }
 /* login page css end */

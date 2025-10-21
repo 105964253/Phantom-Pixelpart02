@@ -14,9 +14,11 @@
   <link rel="stylesheet" href="styles/fonts.css">
 </head>
 
-<body>
+<body id="loginbody">
+    <section id="loginheader">
     <?php include 'header.inc'; ?>
     <?php include 'nav.inc'; ?>
+    </section>
 
     <section id="login">
         <h2>Login</h2>
@@ -42,7 +44,9 @@
         </form>
     </section>
 
+    <section id="loginfooter">
     <?php include 'footer.inc'; ?>
+    </section>
 </body>
 </html> 
     
