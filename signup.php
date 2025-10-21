@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="styles/fonts.css">
 </head>
 
-<body id="loginbody">
+<body id="loginbody"> 
     <section id="loginheader">
     <?php include 'header.inc'; ?>
-    <?php include 'nav.inc'; ?>
+    <?php include 'nav.inc'; ?> <!-- recycles a lot of the login page elements -->
     </section>
 
     <section id="login">
-        <h2>Login</h2>
+        <h2>Sign Up</h2>
         <?php
             if (isset($_SESSION['error'])){
                 echo '<div>' .$_SESSION['error']. '</div>';
@@ -29,19 +29,19 @@
             }
         ?>
 
-        <form id="loginform" action="process_login.php" method="POST">
+        <form id="loginform" action="process_signup.php" method="POST">
             <div id="username">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter username" required>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required>
             </div>
 
             <div id="password">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter password" required>
+            <input type="password" id="password" name="password" placeholder="Choose a password" required>
             </div>
 
-            <input type="submit" value="login">
-            <p class="signuptext">Don’t have an account? <a href="signup.php">Create one</a></p>
+            <input type="submit" value="Create account">
+            <p class="signuptext">Already have an account? <a href="login.php">Log in</a></p>
         </form>
     </section>
 
@@ -50,4 +50,3 @@
     </section>
 </body>
 </html> 
-    
