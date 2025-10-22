@@ -1,15 +1,15 @@
 <?php
-//Database connection
+//Start database connection
 $host = "localhost";
-$user = "root";
-$pwd = " ";
+$user = "root"; //administrative user
+$pwd = ""; 
 $sql_db = " "; // add in database later on
 
 // Connection function
-$conn = mysqli_connect("localhost", "root", " ", " database name")
+$conn = mysqli_connect("localhost", "root", " ", " database name");
 
-// Check the connection to see if it is functioning correctly
-if (!conn) {
+// Check the connection to see if connection is uncessful
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 ?>

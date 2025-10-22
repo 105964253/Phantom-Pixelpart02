@@ -14,12 +14,7 @@
 <!-- Content including slogans and all the statistics are generated using gen ai. -->
 <body id="indexbody"> <!-- Gave it a unique id so that styling would not overlap. -->
     <?php include 'header.inc'; ?>
-     <nav id="header01nav">
-        <a href="index.html" style="font-family: Pixelade; font-size: 18px;">HOME</a>
-        <a href="about.html" style="font-family: Pixelade; font-size: 18px;">ABOUT</a>
-        <a href="jobs.html" style="font-family: Pixelade; font-size: 18px;">CAREERS</a>
-        <a href="apply.html" style="font-family: Pixelade; font-size: 18px;">APPLY NOW</a>
-    </nav>
+    <?php include 'nav.inc'; ?>
     <h1 id="companytitle">Phantom Pixel</h1>
     <h2 id="slogan">Where Every Pixel Tells a Ghost Story.</h2>
     </header>

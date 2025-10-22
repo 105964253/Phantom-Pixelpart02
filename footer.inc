@@ -11,5 +11,3 @@
   </section>
 </footer>
 
-</body>
-</html>

@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <header id="header01">
   <div id="logo">
     <a href="index.php">

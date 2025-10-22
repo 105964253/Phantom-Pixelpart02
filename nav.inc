@@ -4,6 +4,4 @@
     <a href="jobs.php" style="font-family: Pixelade; font-size: 18px;">CAREERS</a>
     <a href="apply.php" style="font-family: Pixelade; font-size: 18px;">APPLY NOW</a>
     <a href="login.php" style="font-family: Pixelade; font-size: 18px;">LOGIN</a>
-  </nav>
-
-</header>
+</nav>

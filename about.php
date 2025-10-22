@@ -14,15 +14,8 @@
 
 <body>
     <header id="header02">
-      <div id="logo">
-  <a href="index.html"> <img src="styles/images/phantompixellogo.png" id="techopslogo" alt="Techops logo" width="200"></a>
-      </div >
-     <nav id="header01nav">
-        <a href="index.html" style="font-family: Pixelade; font-size: 18px;">HOME</a>
-        <a href="about.html" style="font-family: Pixelade; font-size: 18px;">ABOUT</a>
-        <a href="jobs.html" style="font-family: Pixelade; font-size: 18px;">CAREERS</a>
-        <a href="apply.html" style="font-family: Pixelade; font-size: 18px;">APPLY NOW</a>
-    </nav>
+      <?php include 'header.inc'; ?>
+      <?php include 'nav.inc'; ?>
     </header>
   <!-- Main Content -->
   <main>
