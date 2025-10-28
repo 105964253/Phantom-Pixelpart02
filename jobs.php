@@ -19,18 +19,11 @@ $result = mysqli_query($conn, $sql);
   <link rel="stylesheet" href="styles/fonts.css">
 </head>
 <body id="jobsbody">
-  <!-- Header -->
-  <header id="header02">
-    <div id="logo">
-      <a href="index.html"><img src="styles/images/phantompixellogo.png" id="phantompixellogo" alt="phantom pixel logo" width="200"></a>
-    </div>
-    <nav id="header01nav">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="jobs.php">CAREERS</a>
-      <a href="apply.html">APPLY NOW</a>
-    </nav>
-  </header>
+  <section id="pageheader">
+    <?php include 'header.inc'; ?>
+    <?php include 'nav.inc'; ?>
+    </header>
+  </section>
 
   <main>
     <?php

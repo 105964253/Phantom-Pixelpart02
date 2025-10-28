@@ -26,9 +26,10 @@ if (!$conn) {
 </head>
 
 <body id="managerbody">
-    <section id="managerheader">
-    <?php include 'header.inc'; ?>
-    <?php include 'nav.inc'; ?>
+    <section id="pageheader">
+      <?php include 'header.inc'; ?>
+      <?php include 'nav.inc'; ?>
+      </header>
     </section>
 
     <section id="managermain">

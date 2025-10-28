@@ -13,10 +13,11 @@
 </head>
 
 <body>
-    <header id="header02">
+    <section id="pageheader">
       <?php include 'header.inc'; ?>
       <?php include 'nav.inc'; ?>
-    </header>
+      </header>
+    </section>
   <!-- Main Content -->
   <main>
     <!-- Group Details -->

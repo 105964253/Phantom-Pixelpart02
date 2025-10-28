@@ -15,9 +15,10 @@
 </head>
 
 <body id="loginbody">
-    <section id="loginheader">
-    <?php include 'header.inc'; ?>
-    <?php include 'nav.inc'; ?>
+    <section id="pageheader">
+      <?php include 'header.inc'; ?>
+      <?php include 'nav.inc'; ?>
+      </header>
     </section>
 
     <section id="login">

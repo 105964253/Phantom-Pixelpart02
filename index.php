@@ -13,11 +13,13 @@
 </head>
 <!-- Content including slogans and all the statistics are generated using gen ai. -->
 <body id="indexbody"> <!-- Gave it a unique id so that styling would not overlap. -->
-    <?php include 'header.inc'; ?>
-    <?php include 'nav.inc'; ?>
-    <h1 id="companytitle">Phantom Pixel</h1>
-    <h2 id="slogan">Where Every Pixel Tells a Ghost Story.</h2>
-    </header>
+    <section id="pageheader">
+        <?php include 'header.inc'; ?>
+        <?php include 'nav.inc'; ?>
+        <h1 id="companytitle">Phantom Pixel</h1>
+        <h2 id="slogan">Where Every Pixel Tells a Ghost Story.</h2>
+        </header>
+    </section>
 
 <!-- Learn about other tags inside <section> tags https://www.mrc-productivity.com/techblog/?ht_kb=css-tutorial-4-div-and-span-tags -->
     <main>

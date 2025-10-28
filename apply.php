@@ -41,9 +41,10 @@
 </head>
 
 <body id="applybody">
-    <section id="applyheader">
-    <?php include 'header.inc'; ?>
-    <?php include 'nav.inc'; ?>
+    <section id="pageheader">
+        <?php include 'header.inc'; ?>
+        <?php include 'nav.inc'; ?>
+        </header>
     </section>
 
     <main id="applymain">
