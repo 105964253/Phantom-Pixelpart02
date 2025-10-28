@@ -4,7 +4,7 @@ session_start();
 
 require_once("settings.php");
 
-$conn = mysqli_connect($host, $username, $password, $database)
+$conn = mysqli_connect($host, $username, $password, $database);
 
 if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
@@ -63,7 +63,7 @@ if (
                 echo '<tr><th>ID</th><th>Name</th><th>blank</th></tr>';
 
                 while ($row = mysqli_fetch_assoc($result)) { 
-                    echo '<tr>'
+                    echo '<tr>';
                     echo '<td>' . $row['id'] . '</td>';
                     echo '<td>' . $row['name'] . '</td>';
                     echo '<td>' . $row['description'] . '</td>';
@@ -79,8 +79,8 @@ if (
         }
 
         else {
-            echo '<h2>Un-Authorised Access</h2>'
-            echo '<p>This page is for admin users only</p>'
+            echo '<h2>Un-Authorised Access</h2>';
+            echo '<p>This page is for admin users only</p>';
         }
         ?>
     </section>

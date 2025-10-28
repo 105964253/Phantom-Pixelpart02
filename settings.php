@@ -3,7 +3,7 @@
 $host = "localhost";
 $username = "root"; //administrative user
 $password = ""; 
-$sql_db = "phantom_pixel"; // add in database later on
+$database = "phantom_pixel"; // add in database later on
 
 // Connection function
 $conn = mysqli_connect("localhost", "root", "", "phantom_pixel");

@@ -10,8 +10,9 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') { // check if post was used for submitting form
         $input_username = trim($_POST['username']);
         $input_password = trim($_POST['password']);
+        $hash_password = password_hash($input_password)
 
-        $query = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+        $query = "INSERT INTO users (username, password) VALUES ('$username', '$hash_password')";
         $result = mysqli_query($conn, $query);
 
         if ($result) {
