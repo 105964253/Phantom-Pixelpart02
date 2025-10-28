@@ -117,7 +117,7 @@
                 <br>
 
                 <div id="address">
-                    <label class="formtitles">address</label> <!-- formtitles class used for styling each title of each section -->
+                    <h3 class="formtitles">Address</h3> <!-- formtitles class used for styling each title of each section -->
 
                     <div id="street">  
                         <label for="staddress">Street Address:</label>
@@ -147,7 +147,7 @@
                 <br>
 
                 <div id="contacts">
-                    <label class="formtitles">contact details</label>
+                    <h3 class="formtitles">Contact Details</h3>
 
                     <div id="contactlabel"> <!-- top flexbox row div for contact -->
                         <label for="email">Email address*</label>
