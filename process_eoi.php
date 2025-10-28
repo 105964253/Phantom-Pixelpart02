@@ -87,7 +87,7 @@ if (!empty($errors)) {
 }
 
 // Connect to database
-$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+$conn = @mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
     die("<p>Database connection failure: " . mysqli_connect_error() . "</p>");
 }
