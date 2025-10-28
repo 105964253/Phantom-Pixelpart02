@@ -119,14 +119,17 @@
                     <label class="formtitles">address</label> <!-- formtitles class used for styling each title of each section -->
 
                     <div id="street">  
-                        <label for="staddress"></label>
+                        <label for="staddress">Street Address:</label>
                         <input type="text" id="staddress" name="address[]" placeholder="Enter your street address" maxlength="40" pattern="[0-9A-Za-z\s.,/-]+" required>
                     </div>
 
                     <div id="addressdetail"> 
+                         <label for="subtown">Suburb/Town:</label>
                         <input type="text" id="subtown" name="address[]" placeholder="Enter your suburb/town" maxlength="40" pattern="[0-9A-Za-z\s.,/-]+" required>
+                        <label for="postcode">Postcode:</label>
                         <input type="text" id="postcode" name="address[]" placeholder="Enter postcode" pattern="[0-9]{4}$" required>
-                            <select id="state" name="address[]" required>
+                         <label for="state">State:</label>    
+                        <select id="state" name="address[]" required>
                                 <option value="" disabled>Please pick one</option>
                                 <option value="VIC">VIC</option>
                                 <option value="NSW">NSW</option>
