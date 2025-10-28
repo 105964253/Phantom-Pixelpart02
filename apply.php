@@ -75,7 +75,7 @@
                 <br>
 
                 <div id="personal">
-
+                    <h3 class="formtitles">personal details</h3>
                     <div id="firstname">
                         <label for="firstN">First Name:  </label> <!-- firstN used as id to style the input field seperately to the div --> 
                         <input type="text" id="firstN" name="firstname" placeholder="Enter your given name" maxlength="20" pattern="^[A-Za-z]+(?:[ '\-][A-Za-z]+)*$" required>
@@ -117,7 +117,7 @@
                 <br>
 
                 <div id="address">
-                    <h3 class="formtitles">Address</h3> <!-- formtitles class used for styling each title of each section -->
+                    <h3 class="formtitles">address</h3> <!-- formtitles class used for styling each title of each section -->
 
                     <div id="street">  
                         <label for="staddress">Street Address:</label>
@@ -147,7 +147,7 @@
                 <br>
 
                 <div id="contacts">
-                    <h3 class="formtitles">Contact Details</h3>
+                    <h3 class="formtitles">contact details</h3>
 
                     <div id="contactlabel"> <!-- top flexbox row div for contact -->
                         <label for="email">Email address*</label>
@@ -165,7 +165,7 @@
                 <br>
 
                 <fieldset id="SkillList">
-                    <h3 class="formtitles">Relevant Skills*</h3>
+                    <h3 class="formtitles">relevant skills*</h3>
 
 
                     <div class="skills">
