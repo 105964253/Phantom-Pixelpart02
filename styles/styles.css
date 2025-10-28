@@ -408,6 +408,11 @@ h3 {
     transform: scale(1.05); /* enlarges the nav button by 5 percent */
 }
 
+.nav-style {
+  font-family: Pixelade;
+  font-size: 18px;
+}
+
 /* Make the horizontal line pink and thicker */
 hr {
     border: 2px solid #ff1493;
