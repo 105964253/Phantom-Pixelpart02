@@ -48,6 +48,7 @@
     </section>
 
     <main id="applymain">
+         <h1>Apply for a Position at Phantom Pixel</h1>
         <br>
         <section id="summary"> <!-- short summary above the application form -->
             <div class="sumtext">
@@ -164,6 +165,7 @@
                 <br>
 
                 <fieldset id="SkillList">
+                     <legend>Relevant Skills</legend>
                     <label class="formtitles">relevant skills*</label>
 
                     <div class="skills">
