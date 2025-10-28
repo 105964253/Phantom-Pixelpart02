@@ -228,7 +228,7 @@ if ($jobFilter !== '') {
                     </select>
                     &nbsp;&nbsp;
                     <label for="jobref">Filter by Job Ref:&nbsp;</label>
-                    <input type="text" id="jobref" name="jobref" value="<?= htmlspecialchars($jobFilter) ?>" placeholder="e.g. DEV001">
+                    <input type="text" id="jobref" name="jobref" value="<?= htmlspecialchars($jobFilter) ?>" placeholder="e.g. A1234">
                     <noscript><button type="submit">Apply</button></noscript>
                 </form>
             </section>
