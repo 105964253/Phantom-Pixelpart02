@@ -553,6 +553,12 @@ main p {
 /* index page css */
 
 /* About Page css start */
+
+#aboutbody {
+    background:url(Images/backgroundfade.png) repeat-x bottom left; /* image generated with ChatGPT */
+    background-size: cover; /* stretch the background image to cover the entire page */
+}
+
 #header02 {
     background-color: #16213e;
     padding: 20px;
@@ -667,7 +673,7 @@ table.funfacts tbody tr:hover {
     text-align: center;
     margin-bottom: 30px;
     color: #0a121c;
-}
+  }
 
   .jobfield { /* copied from about-section class*/
   background: #fff;
@@ -675,7 +681,7 @@ table.funfacts tbody tr:hover {
   margin-bottom: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+  }
 
   .jobrefnum { /* copied from member-id class */
     text-align: center;

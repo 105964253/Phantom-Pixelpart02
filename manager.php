@@ -9,6 +9,23 @@ $conn = mysqli_connect($host, $username, $password, $database)
 if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
 }
+
+if (
+    isset($_SESSION['username']) && #save change feature from lecture 11 - to be changed based on eoi 
+    $_SESSION['username'] === 'Admin' &&
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+) {
+    $id = isset($_POST['id']) ? (int)$_POST['id'] : 0;
+    $status = $_POST['friendship_status'] ?? '';
+    if ($id > 0 && in_array($status, ['Friend','Unfriend'], true)) {
+        $stmt = mysqli_prepare($conn, "UPDATE friends SET friendship_status=? WHERE id=?");
+        mysqli_stmt_bind_param($stmt, "si", $status, $id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
+    header("Location: " . $_SERVER['PHP_SELF']); // avoid re-submit on refresh
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +42,7 @@ if (!$conn) {
   <link rel="stylesheet" href="styles/fonts.css">
 </head>
 
-<body id="managerbody">
+<body id="loginbody">
     <section id="pageheader">
       <?php include 'header.inc'; ?>
       <?php include 'nav.inc'; ?>
