@@ -57,7 +57,7 @@ if (
 $currentSortKey = $_GET['sort'] ?? 'applied_desc';
 $jobFilter = trim($_GET['jobref'] ?? '');
 
-$SORT_LABELS = [
+$SORT_LABELS = [ // sorting options available in dropdown
     'applied_desc' => 'Applied (newest first)',
     'applied_asc'  => 'Applied (oldest first)',
     'eoi_desc'     => 'EOI # (high → low)',
@@ -90,12 +90,12 @@ $SORT_MAP = [
 $orderby = $SORT_MAP[$currentSortKey] ?? 'DateApplied DESC';
 
 $sql = "SELECT EOInumber, JobRef, FirstName, LastName, Email, MobilePhone, State, Postcode, Skills, Status, DateApplied FROM eoi";
-if ($jobFilter !== '') {
+if ($jobFilter !== '') { // filtering by job reference entered
     $sql .= " WHERE JobRef LIKE ?";
 }
 $sql .= " ORDER BY $orderby";
 
-if ($jobFilter !== '') {
+if ($jobFilter !== '') { 
     $stmt = mysqli_prepare($conn, $sql);
     $pattern = "%$jobFilter%";
     mysqli_stmt_bind_param($stmt, "s", $pattern);
@@ -119,7 +119,7 @@ if ($jobFilter !== '') {
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/fonts.css">
 
-    <style>
+    <style> /* having issues getting styling to work within styles.css, so opted for embeded styling which did */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -185,7 +185,7 @@ if ($jobFilter !== '') {
         }
     </style>
 
-    <script>
+    <script> // script for deleting entries from db - assisted by ai
         function toggleAll(source) {
             document.querySelectorAll('.delbox').forEach(b => b.checked = source.checked);
         }
@@ -216,7 +216,7 @@ if ($jobFilter !== '') {
     <section id="managermain">
         <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'Admin'): ?>
 
-            <section id="sortfunction1">
+            <section id="sortfunction1"> <!-- sort function sections for styling -->
                 <form id="sortbar" method="get">
                     <label for="sort">Sort by:&nbsp;</label>
                     <select id="sort" name="sort" onchange="this.form.submit()">
@@ -248,7 +248,7 @@ if ($jobFilter !== '') {
                     </div>
                 </section>
 
-                <table>
+                <table> <!-- main table pulling data from db -->
                     <tr>
                         <th><input type="checkbox" id="del_master" onclick="toggleAll(this)" title="Select all on this page"></th>
                         <th class="nowrap">EOI #</th>
