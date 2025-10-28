@@ -78,7 +78,7 @@ $result = mysqli_query($conn, $sql);
         </aside>
 
         <div>
-          <a href="apply.html?job=<?php echo urlencode($row['job_ref']); ?>" class="applybutton">APPLY NOW</a>
+          <a href="apply.php?job=<?php echo urlencode($row['job_ref']); ?>" class="applybutton">APPLY NOW</a>
         </div>
       </section>
       <br>
