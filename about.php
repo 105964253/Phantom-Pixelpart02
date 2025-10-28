@@ -49,6 +49,7 @@ if (!$result) {
         mysqli_data_seek($result, 0);
         while ($member = mysqli_fetch_assoc($result)):
         ?>
+        <!-- Reset result pointer back to the start. Learnt from A.I since there are multiples database extraction in this code. Database data will only take the last one if this is not used. -->
           <dt><?= htmlspecialchars($member['member_name']) ?> <span class="member-id"><?= htmlspecialchars($member['student_id']) ?></span></dt>
           <dd>
             <strong>Contribution:</strong> <?= htmlspecialchars($member['contribution']) ?><br>
