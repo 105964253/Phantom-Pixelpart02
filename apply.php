@@ -194,7 +194,6 @@
                     </div>
 
                     <div class="skills">
-                        <label for="skillcomment">Please describe any other skills:</label>
                         <textarea name="skillcomment" id="skillcomment" rows="4" cols="50">Other skills...</textarea>
                     </div>
                 </fieldset>
