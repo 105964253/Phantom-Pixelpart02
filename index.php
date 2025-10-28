@@ -38,7 +38,7 @@
                         <span class="stat-label">Talented Developers</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">12</span>
+                        <span class="stat-number">6</span>
                         <span class="stat-label">Published Games</span>
                     </div>
                     <div class="stat-item">
