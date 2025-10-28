@@ -147,12 +147,7 @@ if ($jobFilter !== '') {
         h2 {
             text-align: center;
         }
-        #sortbar {
-            max-width: 1200px;
-            margin: 10px auto 20px;
-        }
         #sortbar input[type="text"] {
-            padding: 4px 6px;
             border-radius: 4px;
             border: 1px solid #651AE8;
         }
@@ -160,6 +155,33 @@ if ($jobFilter !== '') {
             width: 42px;
             text-align: center;
             background: #f9f7ff;
+        }
+        #sortfunction1 {
+            max-width: 600px;          
+            margin: 10px auto;          
+            background: #ffffff;        
+            padding: 12px;              
+            border-radius: 10px;       
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            text-align: center;        
+            display: flex;
+            justify-content: center;
+            gap: 20px;                  
+        }   
+        #sortfunction2 {
+            max-width: 400px;
+            margin: 20px auto;          
+            background: #ffffff;        
+            padding: 15px;              
+            border-radius: 10px;       
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+            text-align: center;       
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #sortfunction2 #buttons {
+            display: flex;
+            gap: 50px;
         }
     </style>
 
@@ -194,33 +216,37 @@ if ($jobFilter !== '') {
     <section id="managermain">
         <?php if (isset($_SESSION['username']) && $_SESSION['username'] === 'Admin'): ?>
 
-            <form id="sortbar" method="get">
-                <label for="sort">Sort by:&nbsp;</label>
-                <select id="sort" name="sort" onchange="this.form.submit()">
-                    <?php foreach ($SORT_LABELS as $key => $label): ?>
-                        <option value="<?= htmlspecialchars($key) ?>" <?= ($key === $currentSortKey ? 'selected' : '') ?>>
-                            <?= htmlspecialchars($label) ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-                &nbsp;&nbsp;
-                <label for="jobref">Filter by Job Ref:&nbsp;</label>
-                <input type="text" id="jobref" name="jobref" value="<?= htmlspecialchars($jobFilter) ?>" placeholder="e.g. DEV001">
-                <noscript><button type="submit">Apply</button></noscript>
-            </form>
+            <section id="sortfunction1">
+                <form id="sortbar" method="get">
+                    <label for="sort">Sort by:&nbsp;</label>
+                    <select id="sort" name="sort" onchange="this.form.submit()">
+                        <?php foreach ($SORT_LABELS as $key => $label): ?>
+                            <option value="<?= htmlspecialchars($key) ?>" <?= ($key === $currentSortKey ? 'selected' : '') ?>>
+                                <?= htmlspecialchars($label) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    &nbsp;&nbsp;
+                    <label for="jobref">Filter by Job Ref:&nbsp;</label>
+                    <input type="text" id="jobref" name="jobref" value="<?= htmlspecialchars($jobFilter) ?>" placeholder="e.g. DEV001">
+                    <noscript><button type="submit">Apply</button></noscript>
+                </form>
+            </section>
 
             <?php if ($res && mysqli_num_rows($res) > 0): ?>
 
-                <form id="bulkDeleteForm" method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" onsubmit="return confirmDelete()">
-                    <input type="hidden" name="action" value="bulk_delete">
-                    <input type="hidden" name="return_qs" value="<?= htmlspecialchars($_SERVER['QUERY_STRING'] ?? '') ?>">
-                </form>
+                <section id="sortfunction2">
+                    <form id="bulkDeleteForm" method="post" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" onsubmit="return confirmDelete()">
+                        <input type="hidden" name="action" value="bulk_delete">
+                        <input type="hidden" name="return_qs" value="<?= htmlspecialchars($_SERVER['QUERY_STRING'] ?? '') ?>">
+                    </form>
 
-                <div style="max-width:1200px; margin:0 auto 10px; display:flex; gap:8px; align-items:center;">
-                    <button type="button" onclick="selectAll()">Select all</button>
-                    <button type="button" onclick="clearAll()">Clear all</button>
-                    <button type="submit" form="bulkDeleteForm">Delete selected</button>
-                </div>
+                    <div id="buttons">
+                        <button type="button" onclick="selectAll()">Select all</button>
+                        <button type="button" onclick="clearAll()">Clear all</button>
+                        <button type="submit" form="bulkDeleteForm">Delete selected</button>
+                    </div>
+                </section>
 
                 <table>
                     <tr>
