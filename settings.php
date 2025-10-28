@@ -1,8 +1,8 @@
 <?php
 //Start database connection
 $host = "localhost";
-$user = "root"; //administrative user
-$pwd = ""; 
+$username = "root"; //administrative user
+$password = ""; 
 $sql_db = "phantom_pixel"; // add in database later on
 
 // Connection function
