@@ -165,7 +165,6 @@
                 <br>
 
                 <fieldset id="SkillList">
-                     <legend>Relevant Skills</legend>
                     <h3 class="formtitles">Relevant Skills*</h3>
 
 
