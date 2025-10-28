@@ -6,7 +6,7 @@ $password = "";
 $database = "phantom_pixel"; // add in database later on
 
 // Connection function
-$conn = mysqli_connect("localhost", "root", "", "phantom_pixel");
+$conn = mysqli_connect($host, $username, $password, $database);
 
 // Check the connection to see if connection is uncessful
 if (!$conn) {
