@@ -1,3 +1,11 @@
+<?php
+require_once 'settings.php';
+
+$result = mysqli_query($conn, "SELECT * FROM about_members ORDER BY member_name");
+if (!$result) {
+    die("Query failed: " . mysqli_error($conn));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,38 +45,39 @@
     <section class="about-section">
       <h2>Team Member Contributions & Quotes</h2>
       <dl class="members">
-        <dt>Vidhi Patel <span class="member-id">105235713</span></dt>
-        <dd>
-          <strong>Contribution:</strong> About Page Developer & Coordinator.<br>
-          <strong>Favourite Language:</strong> HTML & CSS — “Designing experiences that look and feel right.”<br>
-          <em>Translation:</em> “Concevoir des expériences qui semblent justes et intuitives.”<br>
-          <strong>Email:</strong> <a href="mailto:105235713@student.swin.edu.au">105235713@student.swin.edu.au</a>
-        </dd>
-
-        <dt>Piseth Iv <span class="member-id">105964253</span></dt>
-        <dd>
-          <strong>Contribution:</strong> Index Page Developer.<br>
-          <strong>Favourite Language:</strong> HTML — “Code once, scale everywhere.”<br>
-          <em>Translation:</em> “Coder une fois, évoluer partout.”<br>
-          <strong>Email:</strong> <a href="mailto:105964253@student.swin.edu.au">105964253@student.swin.edu.au</a>
-        </dd>
-
-        <dt>Max Domoney <span class="member-id">106109000</span></dt>
-        <dd>
-          <strong>Contribution:</strong> Apply Page Developer.<br>
-          <strong>Favourite Language:</strong> AutoHotkey — “Automating tasks, one script at a time.”<br>
-          <em>Translation:</em> “Automatiser les tâches, un script à la fois.”<br>
-          <strong>Email:</strong> <a href="mailto:106109000@student.swin.edu.au">106109000@student.swin.edu.au</a>
-        </dd>
-
-        <dt>MD Areen <span class="member-id">105693861</span></dt>
-        <dd>
-          <strong>Contribution:</strong> Careers Page Developer.<br>
-          <strong>Favourite Language:</strong> PHP — “The web’s silent workhorse.”<br>
-          <em>Translation:</em> “Le cheval de bataille silencieux du web.”<br>
-          <strong>Email:</strong> <a href="mailto:105693861@student.swin.edu.au">105693861@student.swin.edu.au</a>
-        </dd>
+        <?php
+        mysqli_data_seek($result, 0);
+        while ($member = mysqli_fetch_assoc($result)):
+        ?>
+          <dt><?= htmlspecialchars($member['member_name']) ?> <span class="member-id"><?= htmlspecialchars($member['student_id']) ?></span></dt>
+          <dd>
+            <strong>Contribution:</strong> <?= htmlspecialchars($member['contribution']) ?><br>
+            <strong>Favourite Language:</strong> <?= htmlspecialchars($member['favourite_language']) ?><br>
+            <em><strong>Translation:</strong></em> <?= htmlspecialchars($member['translation']) ?><br>
+            <strong>Email:</strong> <a href="mailto:<?= htmlspecialchars($member['email']) ?>"><?= htmlspecialchars($member['email']) ?></a>
+          </dd>
+        <?php endwhile; ?>
       </dl>
+    </section>
+
+    <section class="about-section">
+      <h2>Project Contributions</h2>
+      <?php
+      mysqli_data_seek($result, 0);
+      while ($member = mysqli_fetch_assoc($result)):
+      ?>
+        <div class="project-contribution-box">
+          <h3><?= htmlspecialchars($member['member_name']) ?></h3>
+          <div class="project-item">
+            <strong class="project-label">Project 1 Contributions:</strong>
+            <p><?= htmlspecialchars($member['project1_contribution']) ?></p>
+          </div>
+          <div class="project-item">
+            <strong class="project-label">Project 2 Contributions:</strong>
+            <p><?= htmlspecialchars($member['project2_contribution']) ?></p>
+          </div>
+        </div>
+      <?php endwhile; ?>
     </section>
 
     <!-- Group Photo -->
@@ -91,30 +100,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Vidhi Patel</td>
-            <td>UX Designer</td>
-            <td>Soft drinks</td>
-            <td>Ahmedabad, India</td>
-          </tr>
-          <tr>
-            <td>Piseth Iv</td>
-            <td>Data Scientist</td>
-            <td>Bundaberg & Chips</td>
-            <td>Phnom Penh, Cambodia</td>
-          </tr>
-          <tr>
-            <td>Max Domoney</td>
-            <td>Front End Developer</td>
-            <td>Chocolates</td>
-            <td>Melbourne, Australia</td>
-          </tr>
-          <tr>
-            <td>MD Areen</td>
-            <td>Backend Developer</td>
-            <td>Trail Mix</td>
-            <td>Dhaka, Bangladesh</td>
-          </tr>
+          <?php
+          mysqli_data_seek($result, 0);
+          while ($member = mysqli_fetch_assoc($result)):
+          ?>
+            <tr>
+              <td><?= htmlspecialchars($member['member_name']) ?></td>
+              <td><?= htmlspecialchars($member['dream_job']) ?></td>
+              <td><?= htmlspecialchars($member['coding_snack']) ?></td>
+              <td><?= htmlspecialchars($member['hometown']) ?></td>
+            </tr>
+          <?php endwhile; ?>
         </tbody>
       </table>
     </section>
