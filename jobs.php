@@ -93,6 +93,6 @@ $result = mysqli_query($conn, $sql);
   </main>
 
   <!-- Footer -->
-  <?php include 'nav.inc'; ?>
+  <?php include 'footer.inc'; ?>
 </body>
 </html>

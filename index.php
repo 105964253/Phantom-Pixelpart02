@@ -18,6 +18,7 @@
     <h1 id="companytitle">Phantom Pixel</h1>
     <h2 id="slogan">Where Every Pixel Tells a Ghost Story.</h2>
     </header>
+
 <!-- Learn about other tags inside <section> tags https://www.mrc-productivity.com/techblog/?ht_kb=css-tutorial-4-div-and-span-tags -->
     <main>
         <h2>Crafting Tomorrow's Gaming Experiences</h2>
@@ -104,5 +105,5 @@
         </section>
     </main>
 <!-- Footer sections for links to jira, github,etc -->
-    <?php include 'nav.inc'; ?>
+    <?php include 'footer.inc'; ?>
 </body>
