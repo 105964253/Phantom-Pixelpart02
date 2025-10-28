@@ -166,7 +166,8 @@
 
                 <fieldset id="SkillList">
                      <legend>Relevant Skills</legend>
-                    <label class="formtitles">relevant skills*</label>
+                    <h3 class="formtitles">Relevant Skills*</h3>
+
 
                     <div class="skills">
                         <input type="checkbox" id="skill1" name="skills[]" value="Skill 1" required>
@@ -194,6 +195,7 @@
                     </div>
 
                     <div class="skills">
+                        <label for="skillcomment">Please describe any other skills:</label>
                         <textarea name="skillcomment" id="skillcomment" rows="4" cols="50">Other skills...</textarea>
                     </div>
                 </fieldset>
