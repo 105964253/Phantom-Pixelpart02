@@ -64,7 +64,7 @@
 
         <section id="jobform"> <!-- form start -->
             <h2>APPLICATION FORM</h2>
-            <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+            <form action="process_eoi.php" method="post" novalidate>
 
                 <div id="jobreference">
                     <label for="jobref"><strong>Job Reference Number:  </strong></label>
