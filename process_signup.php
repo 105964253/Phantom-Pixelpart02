@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     require_once("settings.php");
 
     $conn = mysqli_connect($host, $username, $password, $database);
@@ -10,14 +12,14 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') { // check if post was used for submitting form
         $input_username = trim($_POST['username']);
         $input_password = trim($_POST['password']);
-        $hash_password = password_hash($input_password)
+        $hash_password = password_hash($input_password, PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO users (username, password) VALUES ('$username', '$hash_password')";
+        $query = "INSERT INTO users (username, password) VALUES ('$input_username', '$hash_password')";
         $result = mysqli_query($conn, $query);
 
         if ($result) {
-            echo "Signup successful. You can now login.";
-            header("Location: login.php");
+            $_SESSION['flash'] = "Signup successful. You can now login."; // flash in order to show successful sign up feed back
+            header("Location: login.php"); 
             exit;
         } 
 

@@ -14,28 +14,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // check if post was used for submit
     $input_username = trim($_POST['username']);
     $input_password = trim($_POST['password']);
 
-    $query = "SELECT * FROM users WHERE username = '$input_username' AND password = '$input_password'"; // SQL query to check if the U and P match in db
-
-    $result = mysqli_query($conn, $query);
-
-    if ($user = mysqli_fetch_assoc($result)) {
-        $_SESSION['username'] = $user['username']; //save username in the session
-
-        if ($user['username'] === 'Admin') { // check if U if Admin and direct to manager.php if so
-            header('Location: manager.php');
-            exit;
-        }
-
-        else {
-            header('Location: index.php');
-            exit;
-        }
-    }
-
-    else {
-        $_SESSION['error'] = "Invalid username or password. Please try again."; // if login failed go back to login page
+    if ($input_username === '' || $input_password === '') {
+        $_SESSION['error'] = "Please enter both username and password.";
         header('Location: login.php');
         exit;
     }
+
+    $query = "SELECT username, password FROM users WHERE username = ? LIMIT 1"; 
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "s", $input_username);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+
+    if ($user = mysqli_fetch_assoc($result)) {
+        if (password_verify($input_password, $user['password'])) {
+
+            session_regenerate_id(true);
+            $_SESSION['username'] = $user['username'];
+
+            if ($user['username'] === 'Admin') {
+                header('Location: manager.php');
+                exit;
+            } else {
+                header('Location: index.php');
+                exit;
+            }
+        }
+    }
+
+    $_SESSION['error'] = "Invalid username or password. Please try again.";
+    header('Location: login.php');
+    exit;
+
+} else {
+    header('Location: login.php');
+    exit;
 }
 ?>
