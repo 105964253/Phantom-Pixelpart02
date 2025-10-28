@@ -664,6 +664,41 @@ main p {
   line-height: 1.5;
 }
 
+/* Project Contributions Styling */
+.project-contribution-box {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 4px solid #ff3a95;
+  border-radius: 8px;
+}
+
+.project-contribution-box h3 {
+  margin-top: 0;
+  color: #651AE8;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.project-contribution-box .project-item {
+  margin-bottom: 10px;
+}
+
+.project-contribution-box .project-item:last-child {
+  margin-bottom: 0;
+}
+
+.project-contribution-box .project-label {
+  color: #651AE8;
+  display: block;
+}
+
+.project-contribution-box .project-item p {
+  margin: 5px 0;
+  color: black;
+  display: block;
+}
+
 /* Team Photo */
 .team-figure {
   margin: 40px auto;

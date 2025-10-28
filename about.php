@@ -60,6 +60,26 @@ if (!$result) {
       </dl>
     </section>
 
+    <section class="about-section">
+      <h2>Project Contributions</h2>
+      <?php
+      mysqli_data_seek($result, 0);
+      while ($member = mysqli_fetch_assoc($result)):
+      ?>
+        <div class="project-contribution-box">
+          <h3><?= htmlspecialchars($member['member_name']) ?></h3>
+          <div class="project-item">
+            <strong class="project-label">Project 1 Contributions:</strong>
+            <p><?= htmlspecialchars($member['project1_contribution']) ?></p>
+          </div>
+          <div class="project-item">
+            <strong class="project-label">Project 2 Contributions:</strong>
+            <p><?= htmlspecialchars($member['project2_contribution']) ?></p>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    </section>
+
     <!-- Group Photo -->
     <figure class="team-figure">
       <img src="styles/Images/Groupphoto.jpg" alt="Phantom Pixel Team Group Photo" width="900">
@@ -80,30 +100,17 @@ if (!$result) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Vidhi Patel</td>
-            <td>UX Designer</td>
-            <td>Soft drinks</td>
-            <td>Ahmedabad, India</td>
-          </tr>
-          <tr>
-            <td>Piseth Iv</td>
-            <td>Data Scientist</td>
-            <td>Bundaberg & Chips</td>
-            <td>Phnom Penh, Cambodia</td>
-          </tr>
-          <tr>
-            <td>Max Domoney</td>
-            <td>Front End Developer</td>
-            <td>Chocolates</td>
-            <td>Melbourne, Australia</td>
-          </tr>
-          <tr>
-            <td>MD Areen</td>
-            <td>Backend Developer</td>
-            <td>Trail Mix</td>
-            <td>Dhaka, Bangladesh</td>
-          </tr>
+          <?php
+          mysqli_data_seek($result, 0);
+          while ($member = mysqli_fetch_assoc($result)):
+          ?>
+            <tr>
+              <td><?= htmlspecialchars($member['member_name']) ?></td>
+              <td><?= htmlspecialchars($member['dream_job']) ?></td>
+              <td><?= htmlspecialchars($member['coding_snack']) ?></td>
+              <td><?= htmlspecialchars($member['hometown']) ?></td>
+            </tr>
+          <?php endwhile; ?>
         </tbody>
       </table>
     </section>
