@@ -48,6 +48,7 @@
     </section>
 
     <main id="applymain">
+         <h1>Apply for a Position at Phantom Pixel</h1>
         <br>
         <section id="summary"> <!-- short summary above the application form -->
             <div class="sumtext">
@@ -116,17 +117,20 @@
                 <br>
 
                 <div id="address">
-                    <label class="formtitles">address</label> <!-- formtitles class used for styling each title of each section -->
+                    <h3 class="formtitles">Address</h3> <!-- formtitles class used for styling each title of each section -->
 
                     <div id="street">  
-                        <label for="staddress"></label>
+                        <label for="staddress">Street Address:</label>
                         <input type="text" id="staddress" name="address[]" placeholder="Enter your street address" maxlength="40" pattern="[0-9A-Za-z\s.,/-]+" required>
                     </div>
 
                     <div id="addressdetail"> 
+                         <label for="subtown">Suburb/Town:</label>
                         <input type="text" id="subtown" name="address[]" placeholder="Enter your suburb/town" maxlength="40" pattern="[0-9A-Za-z\s.,/-]+" required>
+                        <label for="postcode">Postcode:</label>
                         <input type="text" id="postcode" name="address[]" placeholder="Enter postcode" pattern="[0-9]{4}$" required>
-                            <select id="state" name="address[]" required>
+                         <label for="state">State:</label>    
+                        <select id="state" name="address[]" required>
                                 <option value="" disabled>Please pick one</option>
                                 <option value="VIC">VIC</option>
                                 <option value="NSW">NSW</option>
@@ -143,7 +147,7 @@
                 <br>
 
                 <div id="contacts">
-                    <label class="formtitles">contact details</label>
+                    <h3 class="formtitles">Contact Details</h3>
 
                     <div id="contactlabel"> <!-- top flexbox row div for contact -->
                         <label for="email">Email address*</label>
@@ -161,7 +165,9 @@
                 <br>
 
                 <fieldset id="SkillList">
-                    <label class="formtitles">relevant skills*</label>
+                     <legend>Relevant Skills</legend>
+                    <h3 class="formtitles">Relevant Skills*</h3>
+
 
                     <div class="skills">
                         <input type="checkbox" id="skill1" name="skills[]" value="Skill 1" required>
@@ -189,6 +195,7 @@
                     </div>
 
                     <div class="skills">
+                        <label for="skillcomment">Please describe any other skills:</label>
                         <textarea name="skillcomment" id="skillcomment" rows="4" cols="50">Other skills...</textarea>
                     </div>
                 </fieldset>
