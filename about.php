@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/fonts.css">
 </head>
 
-<body>
+<body id="aboutbody">
     <section id="pageheader">
       <?php include 'header.inc'; ?>
       <?php include 'nav.inc'; ?>
