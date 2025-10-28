@@ -101,11 +101,11 @@ if (!$result) {
         </thead>
         <tbody>
           <?php
-          mysqli_data_seek($result, 0);
+          mysqli_data_seek($result, 0); 
           while ($member = mysqli_fetch_assoc($result)):
-          ?>
+          ?> <!-- Taken from atie manage page code to fetch data --> <!-- mysqli_data_seek($result, 0) used to ensure the data is read from the start of the table -->
             <tr>
-              <td><?= htmlspecialchars($member['member_name']) ?></td>
+              <td><?= htmlspecialchars($member['member_name']) ?></td> <!-- htmlspecialchars taken from atie manage page to prevent xss attacks -->
               <td><?= htmlspecialchars($member['dream_job']) ?></td>
               <td><?= htmlspecialchars($member['coding_snack']) ?></td>
               <td><?= htmlspecialchars($member['hometown']) ?></td>
