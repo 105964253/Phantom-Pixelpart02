@@ -3,10 +3,10 @@
 $host = "localhost";
 $user = "root"; //administrative user
 $pwd = ""; 
-$sql_db = " "; // add in database later on
+$sql_db = "phantom_pixel"; // add in database later on
 
 // Connection function
-$conn = mysqli_connect("localhost", "root", " ", " database name");
+$conn = mysqli_connect("localhost", "root", " ", "phantom_pixel");
 
 // Check the connection to see if connection is uncessful
 if (!$conn) {
