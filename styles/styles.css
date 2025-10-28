@@ -408,6 +408,11 @@ h3 {
     transform: scale(1.05); /* enlarges the nav button by 5 percent */
 }
 
+.nav-style {
+  font-family: Pixelade;
+  font-size: 18px;
+}
+
 /* Make the horizontal line pink and thicker */
 hr {
     border: 2px solid #ff1493;
@@ -581,7 +586,7 @@ main p {
     border: 3px solid #ff1493;
     min-width: 300px;
     max-width: 350px;
-    overflow: hidden;
+    overflow: hidden; /* whatever part of the image is not in the box does not leak out of the border */
     transition: transform 0.3s;
 }
 
